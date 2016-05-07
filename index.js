@@ -13,7 +13,7 @@ const logsDirectory = join(__dirname, 'logs');
 mkdirp(dataDirectory);
 mkdirp(logsDirectory);
 
-module.exports = function getData() {
+function getData() {
   car2go.get(url, (error, response, body) => {
     if (error) { writeFile(join(logsDirectory, `${Date.now()}.json`), error); }
     writeFile(join(dataDirectory, `${Date.now()}.json`), body);
@@ -21,4 +21,4 @@ module.exports = function getData() {
   });
 }
 
-if (module.parent) { getData(); }
+if (!module.parent) { getData(); }

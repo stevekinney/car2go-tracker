@@ -4,11 +4,13 @@
   "description": "Scrape the car2go API at regular intervals",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "forever": "forever start index.js"
   },
   "author": "Steve Kinney",
   "license": "MIT",
   "dependencies": {
+    "forever": "^0.15.1",
     "mkdirp": "^0.5.1",
     "request": "^2.72.0"
   }
